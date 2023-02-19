@@ -13,7 +13,7 @@ config.read_file(open('dwh.cfg'))
 
 #os.environ["AWS_ACCESS_KEY_ID"] = config['AWS']['KEY']
 #os.environ["AWS_SECRET_ACCESS_KEY"] = config['AWS']['SECRET']
-#
+
 OUTPUT_PATH = "s3://my-kanika-009/output"
 INPUT_PATH = "s3://my-kanika-009" #"data"
 #OUTPUT_PATH = "output"
@@ -113,7 +113,7 @@ def convert_visa(visa):
 def clean_i94_data(spark, input_path, output_path):
     """
     Loads SAS i94 immigration data into data frame.
-    Data is cleaned and projected, and then written to Parquet.
+    Data is cleaned and then written to Parquet.
     Partitioned by year, month, and day.
     :param spark: Spark session
     :param input_path: Input path to SAS data
@@ -184,8 +184,7 @@ def clean_i94_data(spark, input_path, output_path):
 
 def extract_airport_data(spark, input_path, output_path):
     """
-    Load GlobalLandTemperaturesByCity
-    Extract latest temperature for U.S. cities
+    Extract Airport data, cleanup and store in parquet format.
     Write to Parquet format
     :param spark: Spark Session
     :param input_path: 
@@ -201,8 +200,7 @@ def extract_airport_data(spark, input_path, output_path):
 
 def extract_city_demographics(spark, input_path, output_path):
     """
-    Load GlobalLandTemperaturesByCountry
-    Extract latest temperature for each country
+    Extract city demographics data, cleanup and store in parquet format.
     Write to Parquet format
     :param spark: Spark Session
     :param input_path:
