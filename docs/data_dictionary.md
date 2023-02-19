@@ -53,16 +53,17 @@
 
 |Field|Type|Description|
 |----|-----|-----------|
-|ID | INT | IDENTITY(1,1) PRIMARY KEY |
-|City | VARCHAR(255) |
-|State | VARCHAR(255) |
-|median_age | NUMERIC |
-|male_population | NUMERIC |
-|female_population | NUMERIC |
-|total_population | NUMERIC |
-|no_of_veterans | NUMERIC |
-|foreign_born | NUMERIC |
-|avg_house_hold_size | NUMERIC |
-|state_code | VARCHAR(255) |
-|race | VARCHAR(255) |
-|count | INT |
+|id INT | IDENTITY(1,1) PRIMARY KEY |
+|year | INT |
+|month | INT |
+|age | INT |
+|country_code | VARCHAR(5) |
+|port_code | VARCHAR(6) |
+|mode | VARCHAR(10) |
+|visa_category | VARCHAR(10) |
+|visa_type | VARCHAR(10) |
+|gender | varchar(10) |
+|birth_year | INT |
+|arrival_date | INT |
+|departure_date | INT |
+|address_code VARCHAR(10) |
