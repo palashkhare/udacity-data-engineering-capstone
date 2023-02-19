@@ -66,4 +66,4 @@
 |birth_year | INT |
 |arrival_date | INT |
 |departure_date | INT |
-|address_code VARCHAR(10) |
+|address_code | VARCHAR(10) |
