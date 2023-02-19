@@ -41,7 +41,7 @@
 
 |Field|Type|Description|
 |----|-----|-----------|
-|datetime | INT IDENTITY(1,1) PRIMARY KEY |
+|datetime | INT PRIMARY KEY |
 |hour | INT |
 |dayofmonth | INT |
 |weekofyear | INT |
