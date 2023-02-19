@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS immigration(
 CALENDAR = \
 """
 CREATE TABLE IF NOT EXISTS CALENDAR(
-    datetime INT IDENTITY(1,1) PRIMARY KEY,
+    datetime INT PRIMARY KEY,
     hour INT,
     dayofmonth INT,
     weekofyear INT,
