@@ -14,10 +14,10 @@ config.read_file(open('dwh.cfg'))
 #os.environ["AWS_ACCESS_KEY_ID"] = config['AWS']['KEY']
 #os.environ["AWS_SECRET_ACCESS_KEY"] = config['AWS']['SECRET']
 #
-#OUTPUT_PATH = "s3://my-kanika-009/output"
-#INPUT_PATH = "s3://my-kanika-009" #"data"
-OUTPUT_PATH = "output"
-INPUT_PATH = "data"
+OUTPUT_PATH = "s3://my-kanika-009/output"
+INPUT_PATH = "s3://my-kanika-009" #"data"
+#OUTPUT_PATH = "output"
+#INPUT_PATH = "data"
 
 I94_INPUT_PATH = f"{INPUT_PATH}/sas_data"
 AIRPORT_CODES = f"{INPUT_PATH}/airport-codes_csv.csv"
@@ -231,29 +231,7 @@ def extract_city_demographics(spark, input_path, output_path):
     print("Demographics data complete")
 
 
-spark = create_local_spark_session()
+spark = create_spark_session()
 clean_i94_data(spark, I94_INPUT_PATH, OUTPUT_PATH)
 extract_airport_data(spark, AIRPORT_CODES, OUTPUT_PATH)
 extract_city_demographics(spark, US_CITY_DEMOGRAPHICS, OUTPUT_PATH)
-
-#spark = create_local_spark_session()
-#airport_codes = spark.read.option("header", True).option("inferSchema", True).csv("data/airport-codes_csv.csv")
-#us_cities = spark.read.option("header", True).option("delimiter", ";").option("inferSchema", True).csv("data/us-cities-demographics.csv")
-#immi_data = spark.read.option("header", True).option("inferSchema", True).csv("data/immigration_data_sample.csv")
-#def convert_to_epoch(date: str):
-#    date = str(date).split(".")[0]
-#    date_diff = datetime.strptime(date,"%Y%d%m") - datetime(year=1960, month=1, day=1)
-#    return date_diff.days
-#
-#df = df.withColumn('arrival_date', convert_sas_date_udf(df['arrdate'])) \
-#            .withColumn('departure_date', convert_sas_date_udf(df['depdate'])) \
-#            .withColumn('year', df['i94yr'].cast(IntegerType())) \
-#            .withColumn('month', df['i94mon'].cast(IntegerType())) \
-#            .withColumn('arrival_day', get_sas_day_udf(df['arrdate'])) \
-#            .withColumn('age', df['i94bir'].cast(IntegerType())) \
-#            .withColumn('country_code', df['i94cit'].cast(IntegerType()).cast(StringType())) \
-#            .withColumn('port_code', df['i94port'].cast(StringType())) \
-#            .withColumn('birth_year', df['biryear'].cast(IntegerType())) \
-#            .withColumn('mode', convert_i94mode_udf(df['i94mode'])) \
-#            .withColumn('visa_category', convert_visa_udf(df['i94visa']))
-#
