@@ -44,3 +44,6 @@ This folder hold various scripts to perform different operations which are contr
 ### 4.4 docs
 - **data_dictionary** This file contains the details about data model
 - **project_writeup** Detailed description about project
+
+## 5. Tests
+Contains testing scripts.
