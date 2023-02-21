@@ -75,6 +75,7 @@ INSERT_IMMIGRATION = \
 """
 copy immigration from 's3://{}/output/immigration_data'
 credentials 'aws_iam_role={}'
+format as json 'auto'
 region 'us-east-1';
 """
 
@@ -82,6 +83,7 @@ INSERT_CALENDAR = \
 """
 copy CALENDAR from 's3://{}/output/datetime'
 credentials 'aws_iam_role={}'
+format as json 'auto'
 region 'us-east-1';
 """
 
@@ -89,6 +91,7 @@ INSERT_AIRPORT = \
 """
 copy AIRPORT from 's3://{}/output/airport_data'
 credentials 'aws_iam_role={}'
+format as json 'auto'
 region 'us-east-1';
 """
 
@@ -96,6 +99,7 @@ INSERT_CITY = \
 """
 copy CITY from 's3://{}/output/us_city_demographics'
 credentials 'aws_iam_role={}'
+format as json 'auto'
 region 'us-east-1';
 """
 
