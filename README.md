@@ -68,3 +68,8 @@ This folder hold various scripts to perform different operations which are contr
 ### 4.4 docs
 - **data_dictionary** This file contains the details about data model
 - **project_writeup** Detailed description about project
+
+## 5. Purpose
+A daily data should be updated into immigration table.
+This can be use ful to track any anomali in immigration.
+This will also help understanding daily needs depending on changing trend in different seasons in order to manage facilities better.
