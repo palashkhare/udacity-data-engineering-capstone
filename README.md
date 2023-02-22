@@ -12,6 +12,7 @@ This data will be useful in understanding below KPIs
 - Number of airports in each city by different types
 - Age group of travelers passing immigration
 - Days when high density of immigrats can be expected
+- Number of people using which type of airport to land
 
 ## 1.2 Specification
 - Data analysis made on more than 2 million rows
